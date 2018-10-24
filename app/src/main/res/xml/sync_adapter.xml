@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sync-adapter xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:accountType="com.serenity.daemon.account"
+    android:contentAuthority = "com.serenity.daemon.provider"
+    android:allowParallelSyncs = "false"
+    android:isAlwaysSyncable = "true"
+    android:userVisible = "false"
+    />
+<!--accountType 必须与authenticator.xml中的accountType 一致-->
+
+<!--contentAuthority系统在进行账户同步时 会查找此auth的ContentProvider-->
+
+<!--allowParallelSyncs 允许多个同步-->
+
+<!--isAlwaysSyncable 一直同步-->
+
+<!--userVisible 是否在账户旁边展示一个开关-->
