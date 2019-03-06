@@ -1,11 +1,15 @@
 package com.serenity.daemon.daemon;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.serenity.daemon.daemon.account.AccountHelper;
 import com.serenity.daemon.daemon.activity.KeepManager;
+import com.serenity.daemon.daemon.foregroundservice.ForegroundService;
 import com.serenity.daemon.daemon.jobscheduler.MyJobService;
+
+import java.nio.ByteBuffer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         KeepManager.getInstance().registerBroadcasstReceiver(this);
 
         //前台服务提权
-//        startService(new Intent(this, ForegroundService.class));
+        startService(new Intent(this, ForegroundService.class));
 
 
         //账户同步拉活
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         //JobService  进程拉活
         MyJobService.startJobServcie(this);
+
+//        ByteBuffer
 
     }
 
